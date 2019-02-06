@@ -3,21 +3,19 @@ Blever
 
 ### Usage
 
-> `➜ go get github.com/alash3al/bbadger` .
-
 ```go
 package main
 
 import (
 	"fmt"
 
-	"github.com/alash3al/bbadger"
+	"github.com/squiidz/blever"
 	"github.com/blevesearch/bleve"
 )
 
 func main() {
 	// create/open bleveIndex
-	index, err := bbadger.BleveIndex("/tmp/badger/indexName", bleve.NewIndexMapping())
+	index, err := blever.BleveIndex("/tmp/badger/indexName", bleve.NewIndexMapping())
 
     // index some data
     err = index.Index(identifier, your_data)
