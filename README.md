@@ -1,9 +1,8 @@
-Bleve Badger Backend
+Blever
 =====================
-> [Blevesearch](https://github.com/blevesearch/bleve) kvstore implementation based on [Badger](https://github.com/dgraph-io/badger) forked from [https://github.com/akhenakh/bleve/tree/badger](https://github.com/akhenakh/bleve/tree/badger) with alot of improvements and fixes.
 
-Usage
-==========
+### Usage
+
 > `➜ go get github.com/alash3al/bbadger` .
 
 ```go
