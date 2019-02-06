@@ -5,7 +5,7 @@ import (
 	"log"
 
 	"github.com/blevesearch/bleve"
-	bbadger "github.com/squiidz/blever"
+	"github.com/squiidz/blever"
 )
 
 type User struct {
@@ -21,7 +21,7 @@ func main() {
 		Password: "a1b2c3",
 	}
 	// create/open bleveIndex
-	index, err := bbadger.BleveIndex("badger/userIndex", bleve.NewIndexMapping())
+	index, err := blever.BleveIndex("badger/userIndex", bleve.NewIndexMapping())
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -37,9 +37,10 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	id := searchResult.Hits[0].ID
-	doc, _ := index.Document(id)
-	for _, f := range doc.Fields {
-		fmt.Println(f.Name(), ":", string(f.Value()))
+	for _, d := range searchResult.Hits {
+		doc, _ := index.Document(d.ID)
+		for _, f := range doc.Fields {
+			fmt.Println(f.Name(), ":", string(f.Value()))
+		}
 	}
 }
