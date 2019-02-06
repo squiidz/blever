@@ -1,4 +1,4 @@
-package bbadger
+package blever
 
 import (
 	"github.com/blevesearch/bleve/index/store"
